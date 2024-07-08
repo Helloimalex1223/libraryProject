@@ -8,7 +8,7 @@
 #books
 {
     width: 80%;
-    height: auto;
+    height: 100%;
     background-color: gray;
     padding: 2rem;
     display: flex;
@@ -24,4 +24,11 @@
     padding: 1rem;
     width: 80%;
     border: 1px solid black;
+}
+
+#addBookForm
+{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
 }
