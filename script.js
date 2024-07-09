@@ -2,14 +2,11 @@ const myLibrary = [];
 
 function Book(title, author, pages, read)
 {
-    let hasRead;
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
 }
-
-letbookVal = 0;
 
 
 //adds book to library based on the user's input
@@ -19,6 +16,9 @@ function addBookToLibrary(title, author, pages, read)
     myLibrary.push(myBook);
     addTolibraryGUI(myBook);
 }
+
+//set the variable to be called later for a book's unique data attribute:
+let bookVal = 0;
 
 //get user input from form when the Submit button is clicked
 
@@ -34,11 +34,15 @@ submitButton.addEventListener("click", function()
     document.getElementById("addBookForm").reset();    
 })
 
+
 //prevent the form from submitting when the Submit button is clicked
 document.getElementById("addBookForm").addEventListener('submit', function(event)
-{event.preventDefault();}
+{
+    event.preventDefault();
+}
 );
 
+console.log(myLibrary);
 
 //add the latest book from the myLibrary array to the DOM
 
@@ -64,9 +68,11 @@ function addTolibraryGUI(obj)
     isReadPara.textContent = `Read: ${obj.read}`;
     bookDiv.appendChild(isReadPara);
 
+    ele.appendChild(bookDiv);
+    bookDiv.appendChild(titlePara);
 
     //add the remove button for each book entry
-    const removeButton = document.createElement("button");
+    removeButton = document.createElement("button");
     removeButton.textContent = `Remove Book`;
     removeButton.classList.add("remove");
     bookDiv.appendChild(removeButton);
@@ -76,22 +82,42 @@ function addTolibraryGUI(obj)
     readButton.textContent = `Read`;
     readButton.classList.add("read");
     bookDiv.appendChild(readButton);
-    
-    
-    ele.appendChild(bookDiv);
-    bookDiv.appendChild(titlePara);
+
+    //set data-index attribute for each book
+    setBookAttribute();
 }
+
+
+
+//add attirbute to each book that contains the bookList class
+let books = document.getElementsByClassName("bookEntry");
+
+function setBookAttribute()
+{
+   for(let i = 0; i < books.length; i++)
+    {
+        books[i].setAttribute('data-index', i);
+    } 
+}
+
+// var delButton = document.querySelector(".delete")
+// delButton.addEventListener("click", function()
+// {
+//     for(let i = 0; i < books.length; i++)
+//     {
+//         console.log(books[i].getAttribute('data-index'));
+//     }
+// })
+
+
+
 
 //user input creates a Book object using the book constructor
 //the book constructor is pushed to the myLibrary function
 //the DOM reads data from the myLibrary array
 
-read.addEventListener("click", function()
-{
-    console.log("CLICKED!");
-})
-//todo:
-//Cleanup DOM appends when creating a book object/put the DOM append functionality in the AddBookToLibrary function
-//Create delete button that deletes the array values for a book
-//Create read button that changes the value of the read field
-//Figure out why the DOM is in a weird order
+
+
+//current state: data-attribute list is populating correctly. Need to figoure out how to use the number in the data-attribute to remove the specific DOM node and entry in the array:
+    //for example, button in the book with a data-attribute of 3 is clicked, delete the 3rd entry in the array and remove the 3rd node in the nodelist
+//

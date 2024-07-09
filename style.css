@@ -32,3 +32,10 @@
     flex-direction: column;
     gap: .5rem;
 }
+
+.remove, .read
+{
+    font-weight: bold;
+    padding: .75rem;
+    margin: .25rem;
+}
