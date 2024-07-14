@@ -125,7 +125,7 @@ function btnClicked(e)
 //removes the node from the DOM tree when the "remove" button is clicked
 function removeNode(num)
 {
-    myLibrary.splice(num);
+    myLibrary.splice(num, 1);
     books[num].remove();
     console.log(`my library array:`);
     console.log(myLibrary);
@@ -135,7 +135,7 @@ function removeNode(num)
     
     console.log(`Remove button list:`);
     console.log(buttonList);
-}
 
-//TODO: Bug when I remove a value in the myLibray array -- something wrong with the logic.
-    //Need to test this more
+    //re-calculate the event listener list after an element is removed
+    addListener();
+}
