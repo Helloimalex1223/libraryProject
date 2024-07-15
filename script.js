@@ -19,6 +19,9 @@ function addBookToLibrary(title, author, pages, read)
     addTolibraryGUI(myBook);
 }
 
+var randomColor = Math.floor(Math.random()*16777215).toString(16);
+
+
 //get user input from form when the Submit button is clicked
 
 const submitButton = document.querySelector("#submitButton");
@@ -65,8 +68,8 @@ function addTolibraryGUI(obj)
     const bookDiv = document.createElement("div");
     bookDiv.classList.add("bookEntry");
     
-    const titlePara = document.createElement("p");
-    titlePara.textContent = `Title: ${obj.title}`;
+    const titlePara = document.createElement("h3");
+    titlePara.textContent = `${obj.title}`;
     bookDiv.appendChild(titlePara);
     
     const authorPara = document.createElement("p");
@@ -83,7 +86,6 @@ function addTolibraryGUI(obj)
     bookDiv.appendChild(isReadPara);
 
     ele.appendChild(bookDiv);
-    bookDiv.appendChild(titlePara);
 
     //add the remove button for each book entry
     removeButton = document.createElement("button");

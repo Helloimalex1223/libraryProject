@@ -6,25 +6,49 @@
     <title>Alex's Library</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1 class="heading">My Library</h1>
+        <h1 class="heading">Alex's Library</h1>
 
-            <form id = "addBookForm">
-                <label for="title">Title</label>
-                <input type="text" id = "title" name = "title">
+            <div class="innerContainer">
+                <div class="instructions">
+                    <h2>Instructions</h2>
+                    <ol>
+                        <li>Fill in the form information.</li>
+                        <li>Click "Add book". The book is added to your library.</li>
+                        <li>(Optional) Click "Remove Book" to remove the book from your library.</li>
+                        <li>(Optional) Click "Read" to mark the book as read.</li>
+                    </ol>
+                </div>
+                
+                <form id = "addBookForm">
+                    <h2>Book Information</h2>
+                    <div class="formContainer">
+                        <div class="labels">
+                            <label for="title">Title</label>
+                            <label for="title">Author</label>
+                            <label for="title">Pages</label>
+                            <label for="title">Read?</label>
+                        </div>
+    
+                        <div class="inputs">
+                            <input type="text" id = "title" name = "title">
+                            <input type="text" id = "author" name = "author">
+                            <input type="text" id = "pages" name = "pages">
+                            <input type="checkbox" id = "read" name = "read">
+                        </div>
 
-                <label for="title">Author</label>
-                <input type="text" id = "author" name = "author">
-
-                <label for="title">Pages</label>
-                <input type="text" id = "pages" name = "pages">
-
-                <label for="title">Read?</label>
-                <input type="checkbox" id = "read" name = "read">
-                <button id = "submitButton">Submit</button>
-            </form>
+                    </div>
+                    
+                    <button id = "submitButton">Add book</button>
+                </form>
+            </div>
+            
+            <h2>Your Books</h2>
         <div id="books">
         </div>
     </div>

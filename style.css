@@ -1,17 +1,160 @@
+*
+{
+    font-family: 'VT323', 'Times New Roman', Times, serif;
+    letter-spacing: 3px;
+}
+
+html, body
+{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(183, 183, 255);
+}
+
+h1
+{
+    font-size: 60px;
+}
+
+h2
+{
+    font-size: 40px;
+}
+
+h3
+{
+    font-size: 30px;
+}
+
+p, label, li, button
+{
+    font-size: 25px;
+}
+
+
+ol
+{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
 .container
 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    max-width: 1500px;
+}
+input
+{
+    padding-left: 2px;
+    padding-right: 5px;
+}
+
+.innerContainer
+{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    padding: 2rem;
+}
+
+.instructions
+{
+    border: .25rem solid yellow;
+    padding: .5rem;
+    flex-grow: 2;
+}
+
+#addBookForm
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: .25rem solid blue;
+    padding: .5rem;
+    flex-grow: 1;
+}
+
+.formContainer
+{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.labels, .inputs
+{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    justify-content: space-between;
+}
+
+.inputs
+{
+    align-items: flex-start;
+}
+
+h3
+{
+    text-align: center;
+}
+
+#submitButton
+{
+    padding: .5rem 2rem;
+    font-weight: bolder;
+    font-size: 20px;
+    background-color: white;
+    transition: all 1s;
+}
+
+#submitButton:hover
+{
+    background-color: orange;
+}
+
+.remove, .read
+{
+    font-weight: bold;
+    padding: .75rem;
+    margin: .25rem;
+}
+
+.readFormatting
+{
+    display: flex;
+    align-items: flex-start;
+    gap: .5rem;
+}
+
+#read
+{
+    margin-left: 0;
 }
 
 #books
 {
     width: 80%;
     height: 100%;
-    background-color: gray;
+    border: .25rem solid black;
     padding: 2rem;
     display: flex;
+    align-items: center;
     gap: 1rem;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -23,20 +166,6 @@
     flex-direction: column;
     border: 1px solid white;
     padding: 1rem;
-    width: 30%;
-    border: 1px solid black;
-}
-
-#addBookForm
-{
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-}
-
-.remove, .read
-{
-    font-weight: bold;
-    padding: .75rem;
-    margin: .25rem;
+    width: 20%;
+    border: .25rem solid black;
 }
